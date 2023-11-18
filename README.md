@@ -1,6 +1,7 @@
 # Cache_requests
 
-
+### to start in termnial
+<code> uvicorn main:app --reload </code>
 
 ## Getting started
 
