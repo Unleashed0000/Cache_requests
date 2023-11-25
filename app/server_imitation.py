@@ -6,29 +6,6 @@ host_port = '75.119.142.124:5000' # удалённый запуск
 host_port = '0.0.0.0:5000' # локальный
 
 
-'''
-all_request_post = [{
-"url": "http://127.0.0.1:8000/post",  # Замените на фактический URL вашего сервера
-"url_ext": "example",
-"headers": {"Content-Type": "application/json"},
-"data": {
-    "method": "payment",
-    "params": {
-        "card_holder_name": "CARDHOLDER NAME",
-        "card_number": "4278011111275400",
-        "card_expire": "2702",
-        "card_cvc": "067",
-        "amount": "1000",
-        "description": "Month subscription",
-        "redirect_url": "https://shop.merchant.com/order/23"
-    },
-    "id": "85e0cd56-52c9-4709-b558-81203cb4e6ff"
-},
-
-}]
-for i in all_request_post:
-    requests.post(i['url'], headers=i['headers'], data=json.dumps(i['data']))
-'''
 data = {
     "url": f"http://{host_port}/post",
     "database": "Redis",
@@ -47,6 +24,7 @@ data = {
         "id": "85e0cd56-52c9-4709-b558-81203cb4e6ffjjjj"
     }
 }
+
 data_xml = '''<request>
     <url>http://127.0.0.1:8000/put</url>
     <database>Redis</database>
@@ -93,7 +71,7 @@ def imitate():
     response = requests.put(url_xml,headers=headers, data=data_xml)
 
   #  response = requests.delete(data_delete["url"], json=data_delete)
-    pass
+    return response
 
 
 '''

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request, HTTPException
+from fastapi import APIRouter, Request
 from models import AllRequestPost, AllInitialPost, RequestDelete
 from databases.redis import redis_cache
 from request_handler import handle_request, make_request
