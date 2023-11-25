@@ -1,22 +1,32 @@
 from fastapi import APIRouter, Request, HTTPException
 from models import AllRequestPost, AllInitialPost, RequestDelete
-from database import redis_cache
+from databases.redis import redis_cache
 from request_handler import handle_request, make_request
 from server_imitation import imitate
 
 router = APIRouter()
 
+@router.post("/post")
+async def post_xml(request: Request):
+   """Запрос post в форме xml"""
+   await handle_request('POST', request)
 
 @router.post("/post")
 async def post(request: AllRequestPost):
-   """Добавить описание"""
+   """Запрос post в форме json"""
 
    await handle_request('POST', request)
 
+@router.put("/put")
+async def put_xml(request: Request):
+   """Запрос put в форме xml"""
+   await handle_request('PUT', request)
 
 @router.put("/put")
-async def put(request: Request):
-   """Добавить описание"""
+async def put(request: AllRequestPost):
+   """Запрос put в форме json"""
+   await handle_request('PUT', request)
+   '''
    try:
       headers = dict(request.headers)
       data_xml = await request.body()
@@ -28,7 +38,7 @@ async def put(request: Request):
    except Exception as e:
       raise HTTPException(status_code=500, detail=str(e))
    #await func("PUT",request)
-
+   '''
 
 @router.post("/post/initial")
 async def post(request: AllInitialPost):

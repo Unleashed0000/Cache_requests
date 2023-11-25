@@ -1,9 +1,9 @@
 import redis
 import json
 from config import redis_host, redis_port
+from databases.base import DataBase
 
-
-class RedisCache:
+class RedisCache(DataBase):
     def __init__(self, host='localhost', port=6379, db=0, decode_responses=True):
         self.redis_client = redis.StrictRedis(host=host, port=port, db=db, decode_responses=decode_responses)
 
