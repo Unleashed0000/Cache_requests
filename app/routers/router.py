@@ -9,23 +9,26 @@ router = APIRouter()
 @router.post("/post")
 async def post_xml(request: Request):
    """Запрос post в форме xml"""
-   await handle_request('POST', request)
+   response = await handle_request('POST', request)
+   print(response)
 
-@router.post("/post")
+@router.post("/post/json")
 async def post(request: AllRequestPost):
    """Запрос post в форме json"""
-
-   await handle_request('POST', request)
+   response = await handle_request('POST', request)
+   print(response)
 
 @router.put("/put")
 async def put_xml(request: Request):
    """Запрос put в форме xml"""
-   await handle_request('PUT', request)
+   response = await handle_request('PUT', request)
+   print(response)
 
-@router.put("/put")
+@router.put("/put/json")
 async def put(request: AllRequestPost):
    """Запрос put в форме json"""
-   await handle_request('PUT', request)
+   response= await handle_request('PUT', request)
+   print(response)
    '''
    try:
       headers = dict(request.headers)
