@@ -17,8 +17,19 @@ class RedisCache:
     def get(self, key):
         value =  self.redis_client.get(key)
         return [] if value == "null" else json.loads(value)
+    def exists_in_database(self, key):
+        return self.redis_client.exists(key)
 
+    def associate_url_with_cache_key(self, url, cache_key):
+        # Используем lpush для добавления значения в начало списка
+        self.redis_client.lpush(url, cache_key)
 
+    def get_cache_key_for_url(self, url):
+        # Используем lrange для получения всех значений из списка
+        return self.redis_client.lrange(url, 0, -1)
+    def delete_cache_for_url(self, url):
+        # Используем del для удаления ключа и связанных с ним значений
+        self.redis_client.delete(url)
     def set(self, key, value):
         # Сериализуем список в строку JSON перед сохранением в Redis
         serialized_value = json.dumps(value)

@@ -8,8 +8,14 @@ class AllInitialPost(BaseModel):
     exclude_columns: Optional[List[str]] = None
     key_columns: Optional[List[str]] = None
     database: str = "Redis"
-    flag_columns: bool = True
+    use_exclude_columns: bool
     headers: dict = None
+
+
+class RequestDelete(BaseModel):
+    url: str
+    url_ext: str
+    database: str = "Redis"
 
 
 class AllRequestPost(BaseModel):
