@@ -2,6 +2,7 @@
 
 ### to start in termnial
 <code> uvicorn main:app --reload </code>
+<code> uvicorn main:app --port 5000 --host '0.0.0.0' --reload </code>
 
 ## Getting started
 
