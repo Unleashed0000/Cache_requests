@@ -8,7 +8,7 @@ class AllInitialPost(BaseModel):
     exclude_columns: Optional[List[str]] = None
     key_columns: Optional[List[str]] = None
     database: str = "Redis"
-    use_exclude_columns: bool
+    use_exclude_columns: bool = True
     headers: dict = None
 
 

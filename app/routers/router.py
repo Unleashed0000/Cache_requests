@@ -67,7 +67,7 @@ async def get(request: Request):
         print(response)    
 
 @router.get("/test")
-async def test():
+def test():
    """Имитация payin запросов"""
-
-   await imitate()
+   
+   imitate()

@@ -1,7 +1,7 @@
 import requests
 import json
 
-host_port = '127.0.0.1:8000'
+host_port = '127.0.0.1:5000'
 host_port = '75.119.142.124:5000' # удалённый запуск
 host_port = '0.0.0.0:5000' # локальный
 
@@ -69,7 +69,7 @@ data_delete= {
 def imitate():
     response = requests.post(data_initial["url"], json=data_initial)
 
-    response = requests.put(data["url"], json=data)
+    response = requests.post(data["url"], json=data)
 
     response = requests.delete(data_delete["url"], json=data_delete)
 
