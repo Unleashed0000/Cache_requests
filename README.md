@@ -47,20 +47,23 @@ https://youtu.be/ixSV4lsoHLA
     "use_exclude_columns": True,
     "headers":{"Content-Type": "application/json"}}
    
-3. Последующие запросы содержат в себе:
-Для GET запросов, указывается лишь database для выбора базы данных (По умолчанию Redis, если без параметров.), data_get["url"] - это url нашего прокси для прокидывания запроса через него.
-requests.get(data_get["url"]+"?database="+data_get["database"])
-Для POST и PUT запросов, вызов выглядит следующим образом:
-requests.post(data_initial["url"],json=data_initial)
-Приложение позволяет так же делать запросы не с JSON, а с XML данными:
-requests.post(url,data=data_xml)  
-Важно использовать корректные API для ваших данных:
-POST с JSON /post/json
-POST с XML - /post
-PUT с XML - /put
-PUT с JSON - /put/json
+3. Последующие запросы содержат в себе: <br>
+Для GET запросов, указывается лишь database для выбора базы данных (По умолчанию Redis, если без параметров.), data_get["url"] - это url нашего прокси для прокидывания запроса через него.<br>
+requests.get(data_get["url"]+"?database="+data_get["database"])<br>
+Для POST и PUT запросов, вызов выглядит следующим образом:<br>
+requests.post(data_initial["url"],json=data_initial)<br>
+Приложение позволяет так же делать запросы не с JSON, а с XML данными:<br>
+requests.post(url,data=data_xml)<br>
+Приложение позволяет удалить кешированные запросы по партнеру:<br>
+response = requests.delete(data_delete["url"], json=data_delete)<br>
+Важно использовать корректные API для ваших данных:<br>
+POST с JSON /post/json<br>
+POST с XML - /post<br>
+PUT с XML - /put<br>
+PUT с JSON - /put/json<br>
+DELETE - /delete<br>
 
-При получении запроса, прокси сервер проверяет существует ли такой кэш в базе данных, если существует - возвращает ранее полученный response, если не существует - выполняется запрос.
+При получении запроса, прокси сервер проверяет существует ли такой кэш в базе данных, если существует - возвращает ранее полученный response, если не существует - выполняется запрос.<br>
 
 3. Рассмотрен вариант обработки коллбэков, в частности в модуле request_handler.py добавлена ф-ция для отправки сообщений, с учетом того, что может прийти коллбэк
 Логика работы:  Отправляем сообщение тест-среде через сокет, некоторое время (5сек) сокет считывает все приходящие сообщения 
