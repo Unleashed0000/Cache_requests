@@ -1,6 +1,13 @@
 # Cache_requests
+## Информация о команде: ее название и фамилии участников на момент отправки кода
+# Команда QuinQuaQuo
+Николай Филинов - backend
+Владимир Петров - backend
+Аня Умикашвили - Project manager
+Надежда Агафонова - Project manager
 
 ### to start in termnial
+Более подробный локальнйы запуск будет описан в видео демонстрации
 <code> uvicorn main:app --reload </code>
 <code> uvicorn main:app --port 5000 --host '0.0.0.0' --reload </code>
 
@@ -28,10 +35,9 @@ https://youtu.be/ixSV4lsoHLA
     "key_columns":['car_number','card_cvc'],
     "database": "Redis",
     "use_exclude_columns": True,
-    "headers":{"Content-Type": "application/json"}
-
-}
-2. Последующие запросы содержат в себе:
+    "headers":{"Content-Type": "application/json"}}
+   
+3. Последующие запросы содержат в себе:
 Для GET запросов, указывается лишь database для выбора базы данных (По умолчанию Redis, если без параметров.), data_get["url"] - это url нашего прокси для прокидывания запроса через него.
 requests.get(data_get["url"]+"?database="+data_get["database"])
 Для POST и PUT запросов, вызов выглядит следующим образом:
