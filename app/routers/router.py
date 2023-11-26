@@ -1,8 +1,9 @@
 from fastapi import APIRouter, Request
 from models import AllRequestPost, AllInitialPost, RequestDelete
-from databases.redis import redis_cache
+
 from request_handler import handle_request, make_request
 from server_imitation import imitate
+from db.redis_db import redis_cache
 
 router = APIRouter()
 
@@ -39,6 +40,7 @@ async def put(request: AllRequestPost):
       raise HTTPException(status_code=500, detail=str(e))
    #await func("PUT",request)
    '''
+
 
 @router.post("/post/initial")
 async def post(request: AllInitialPost):

@@ -64,6 +64,7 @@ data_delete= {
 }
 headers = {"Content-Type": "application/xml"}
 url_xml = f'http://{host_port}/put'
+
 def imitate():
    # response = requests.post(data_initial["url"], json=data_initial)
 

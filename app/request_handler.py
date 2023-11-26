@@ -1,8 +1,8 @@
 import requests
 import json
-from databases.redis import redis_cache
 from models import AllRequestPost
 import xmltodict
+from db.redis_db import redis_cache
 
 async def handle_request(method, request: AllRequestPost):
    # print(method)
