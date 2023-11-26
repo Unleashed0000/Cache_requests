@@ -7,6 +7,8 @@
 Надежда Агафонова - Project manager <br>
 Сергей Карасев - Analyst <br>
 
+Command chat - https://t.me/+WH5gjs00mf44MDRi <br>
+
 # requirements
 python 3.10.9 <br>
 pip install fastapi, redis, uvicorn, xmltodict, socket
