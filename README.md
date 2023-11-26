@@ -9,6 +9,9 @@
 
 Command chat - https://t.me/+WH5gjs00mf44MDRi <br>
 
+## Презентация
+https://prezi.com/view/4pGwYE5u6GxHcXXlXiLF/ <br>
+
 # requirements
 python 3.10.9 <br>
 pip install fastapi, redis, uvicorn, xmltodict, socket
