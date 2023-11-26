@@ -86,8 +86,8 @@ def imitate():
    # response = requests.post(data_initial["url"], json=data_initial)
 
     response = requests.post(data_post["url"], json=data_post)
-    for i in range(5):
-        response = requests.post(data_post["url"], json=data_post)
+   # for i in range(5):
+   #     response = requests.post(data_post["url"], json=data_post)
 
    # response = requests.put(url_xml,headers=headers, data=data_xml)
 
