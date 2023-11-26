@@ -7,7 +7,7 @@
 Надежда Агафонова - Project manager <br>
 
 # requirements
-python 3.10.9
+python 3.10.9 <br>
 pip install fastapi, redis, uvicorn, xmltodict, socket
 
 ## БД redis 
