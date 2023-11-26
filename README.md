@@ -49,13 +49,13 @@ https://youtu.be/ixSV4lsoHLA
    
 3. Последующие запросы содержат в себе: <br>
 Для GET запросов, указывается лишь database для выбора базы данных (По умолчанию Redis, если без параметров.), data_get["url"] - это url нашего прокси для прокидывания запроса через него.<br>
-requests.get(data_get["url"]+"?database="+data_get["database"])<br>
+   requests.get(data_get["url"]+"?database="+data_get["database"])<br>
 Для POST и PUT запросов, вызов выглядит следующим образом:<br>
-requests.post(data_initial["url"],json=data_initial)<br>
+   requests.post(data_initial["url"],json=data_initial)<br>
 Приложение позволяет так же делать запросы не с JSON, а с XML данными:<br>
-requests.post(url,data=data_xml)<br>
+   requests.post(url,data=data_xml)<br>
 Приложение позволяет удалить кешированные запросы по партнеру:<br>
-response = requests.delete(data_delete["url"], json=data_delete)<br>
+   requests.delete(data_delete["url"], json=data_delete)<br>
 Важно использовать корректные API для ваших данных:<br>
 POST с JSON /post/json<br>
 POST с XML - /post<br>
