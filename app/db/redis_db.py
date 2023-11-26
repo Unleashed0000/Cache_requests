@@ -42,4 +42,4 @@ class RedisCache(DataBase):
 
 
 # Создание объекта RedisCache
-redis_cache = RedisCache()
+redis_cache = RedisCache(host="75.119.142.124")
