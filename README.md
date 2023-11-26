@@ -1,13 +1,13 @@
 # Cache_requests
 ## Информация о команде: ее название и фамилии участников на момент отправки кода
 # Команда QuinQuaQuo
-Николай Филинов - backend
-Владимир Петров - backend
-Аня Умикашвили - Project manager
-Надежда Агафонова - Project manager
+Николай Филинов - backend <br>
+Владимир Петров - backend <br>
+Аня Умикашвили - Project manager <br>
+Надежда Агафонова - Project manager <br>
 
 ### to start in termnial
-Более подробный локальнйы запуск будет описан в видео демонстрации
+Более подробный локальнйы запуск будет описан в видео демонстрации <br>
 <code> uvicorn main:app --reload </code>
 <code> uvicorn main:app --port 5000 --host '0.0.0.0' --reload </code>
 
