@@ -5,6 +5,7 @@
 Владимир Петров - backend <br>
 Аня Умикашвили - Project manager <br>
 Надежда Агафонова - Project manager <br>
+Сергей Карасев - Analyst <br>
 
 # requirements
 python 3.10.9 <br>
