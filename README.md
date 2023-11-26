@@ -6,6 +6,13 @@
 Аня Умикашвили - Project manager <br>
 Надежда Агафонова - Project manager <br>
 
+# requirements
+python 3.10.9
+pip install fastapi, redis, uvicorn, xmltodict, socket
+
+## БД redis 
+В данный момент запущена на нашем удалённом сервере и вам поднимать её не нужно
+
 ### to start in termnial
 Более подробный локальнйы запуск будет описан в видео демонстрации <br>
 <code> uvicorn main:app --reload </code>
