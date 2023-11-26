@@ -6,8 +6,26 @@ host_port = '75.119.142.124:5000' # удалённый запуск
 host_port = '0.0.0.0:5000' # локальный
 
 
-data = {
-    "url": f"http://{host_port}/post",
+data_post = {
+    "url": f"http://{host_port}/post/json",
+    "database": "Redis",
+    "headers": {"Content-Type": "application/json"},
+    "data": {
+        "method": "payment",
+        "params": {
+            "card_holder_name": "CARDHOLDER NAME",
+            "card_number": "4278011111275400",
+            "card_expire": "2702",
+            "card_cvc": "067",
+            "amount": "1000",
+            "description": "Month subscription",
+            "redirect_url": "https://shop.merchant.com/order/23"
+        },
+        "id": "85e0cd56-52c9-4709-b558-81203cb4e6ffjjjj"
+    }
+}
+data_put = {
+    "url": f"http://{host_port}/put/json",
     "database": "Redis",
     "headers": {"Content-Type": "application/json"},
     "data": {
@@ -68,10 +86,13 @@ url_xml = f'http://{host_port}/put'
 def imitate():
    # response = requests.post(data_initial["url"], json=data_initial)
 
-  #  response = requests.post(data["url"], json=data)
-    response = requests.put(url_xml,headers=headers, data=data_xml)
+    response = requests.post(data_post["url"], json=data_post)
+   # for i in range(5):
+   #     response = requests.post(data_post["url"], json=data_post)
 
-  #  response = requests.delete(data_delete["url"], json=data_delete)
+   # response = requests.put(url_xml,headers=headers, data=data_xml)
+
+   # response = requests.delete(data_delete["url"], json=data_delete)
     return response
 
 
